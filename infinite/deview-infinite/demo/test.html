@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        .item {
+            border: 1px solid #333;
+            padding: 5px;
+        }
+        @media screen and (max-width: 700px) {
+            .item {
+                padding: 20px;
+            }
+        }
+    </style>
+<div class="container" style="position: relative; height: 500px;">
+
+</div>
+<script src="../dist/infinite.js"></script>
+<script>
+    var infinite = new Infinite(document.querySelector(".container"), {
+        overflow: true,
+        margin: 5,
+    }).on("append", ({ requestIndex }) => {
+        infinite.append(`<div class="item" style="width:100%">Item ${requestIndex}</div>`);
+    });
+    
+    infinite.layout();
+</script>
+</body>
+</html>
