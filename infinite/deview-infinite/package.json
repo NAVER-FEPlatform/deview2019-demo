@@ -1,0 +1,26 @@
+{
+	"name": "@egjs/deview-infinite",
+	"version": "0.1.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": {
+		"name": "NAVER Corp."
+	},
+	"namespace": {
+		"eg": "eg"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/NAVER-FEPlatform/deview2019-demo",
+	"dependencies": {
+		"@egjs/component": "^2.1.2"
+	},
+	"devDependencies": {
+		"@egjs/build-helper": "0.0.5",
+		"@egjs/list-differ": "^1.0.0",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4"
+	}
+}
