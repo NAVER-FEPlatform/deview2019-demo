@@ -10,15 +10,23 @@ function makeElement(html: string) {
 }
 
 export default class Infinite extends Component {
+    public options!: InifniteOptions;
     private items: Item[] = [];
     private containerOffset = 0;
     private containerHeight = 0;
     private scrollHeight = 0;
     constructor(
         private container: HTMLElement,
-        public options: Partial<InifniteOptions> = {},
+        options: Partial<InifniteOptions> = {},
     ) {
         super();
+        this.options = {
+            threshold: 100,
+            margin: 0,
+            renderExternal: false,
+            overflow: false,
+            ...options,
+        };
         if (options.overflow) {
             container.style.overflow = "scroll";
         }
@@ -106,9 +114,14 @@ export default class Infinite extends Component {
         window.removeEventListener("resize", this.onResize);
     }
     private onScroll = () => {
-        const scrollTop = (this.options.overflow ? this.container.scrollTop : document.documentElement.scrollTop) - this.containerOffset;
+        const {
+            threshold,
+            overflow,
+        } =  this.options;
+        const scrollTop = overflow ? this.container.scrollTop : document.documentElement.scrollTop;
+        const relativeScrollTop = scrollTop - this.containerOffset;
 
-        if (scrollTop > this.scrollHeight - this.containerHeight - 100) {
+        if (relativeScrollTop > this.scrollHeight - this.containerHeight - threshold) {
             this.trigger("append", {
                 requestIndex: this.items.length,
             });

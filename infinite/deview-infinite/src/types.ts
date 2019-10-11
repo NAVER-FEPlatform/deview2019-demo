@@ -1,7 +1,8 @@
 export interface InifniteOptions {
     renderExternal: boolean;
     overflow: boolean;
-    margin: number,
+    margin: number;
+    threshold: number;
 }
 export interface Item {
     pos: number;
