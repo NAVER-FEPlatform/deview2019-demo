@@ -1,4 +1,4 @@
-export interface InifniteOptions {
+export interface InfiniteOptions {
     renderExternal: boolean;
     overflow: boolean;
     margin: number;

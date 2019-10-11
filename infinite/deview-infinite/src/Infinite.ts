@@ -1,6 +1,6 @@
 import Component from "@egjs/component";
 import { DiffResult } from "@egjs/list-differ";
-import { InifniteOptions, Item } from "./types";
+import { InfiniteOptions, Item } from "./types";
 
 function makeElement(html: string) {
     const el = document.createElement("div");
@@ -10,14 +10,14 @@ function makeElement(html: string) {
 }
 
 export default class Infinite extends Component {
-    public options!: InifniteOptions;
+    public options!: InfiniteOptions;
     private items: Item[] = [];
     private containerOffset = 0;
     private containerHeight = 0;
     private scrollHeight = 0;
     constructor(
         private container: HTMLElement,
-        options: Partial<InifniteOptions> = {},
+        options: Partial<InfiniteOptions> = {},
     ) {
         super();
         this.options = {
