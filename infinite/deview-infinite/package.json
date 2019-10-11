@@ -22,7 +22,7 @@
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/daybrush/scenejs-editor/issues"
+		"url": "https://github.com/NAVER-FEPlatform/deview2019-demo/issues"
 	},
 	"homepage": "https://github.com/NAVER-FEPlatform/deview2019-demo",
 	"dependencies": {

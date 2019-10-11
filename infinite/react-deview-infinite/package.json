@@ -1,0 +1,58 @@
+{
+    "name": "@egjs/react-deview-infinite",
+    "version": "0.0.1",
+    "types": "declaration/index.d.ts",
+    "main": "dist/infinite.cjs.js",
+    "module": "dist/infinite.esm.js",
+    "sideEffects": false,
+    "author": {
+        "name": "NAVER Corp."
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NAVER-FEPlatform/deview2019-demo.git"
+    },
+    "bugs": {
+        "url": "https://github.com/NAVER-FEPlatform/deview2019-demo/issues"
+    },
+    "homepage": "https://github.com/NAVER-FEPlatform/deview2019-demo",
+    "dependencies": {
+        "@egjs/deview-infinite": "0.0.5",
+        "@egjs/react-children-differ": "^1.0.0",
+        "@types/jest": "24.0.18",
+        "@types/node": "12.7.12",
+        "@types/react": "16.9.5",
+        "@types/react-dom": "16.9.1",
+        "react": "^16.10.2",
+        "react-dom": "^16.10.2",
+        "react-scripts": "3.2.0",
+        "typescript": "3.6.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "rollup -c && npm run declaration",
+        "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@babel/generator": "^7.2.2",
+        "@egjs/build-helper": "0.0.5"
+    }
+}
