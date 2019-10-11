@@ -1,5 +1,5 @@
 import Component from "@egjs/component";
-import { DiffResult } from "@egjs/list-differ";
+import { diff, ChildrenDiffResult } from "@egjs/children-differ";
 import { InfiniteOptions, Item } from "./types";
 
 function makeElement(html: string) {
@@ -15,6 +15,7 @@ export default class Infinite extends Component {
     private containerOffset = 0;
     private containerHeight = 0;
     private scrollHeight = 0;
+    private timer = 0;
     constructor(
         private container: HTMLElement,
         options: Partial<InfiniteOptions> = {},
@@ -87,8 +88,13 @@ export default class Infinite extends Component {
         this.onScroll();
         return this;
     }
-    public sync(result: DiffResult<HTMLElement>) {
-        const { removed, ordered, added, list } = result;
+    public sync(elements: HTMLElement[]) {
+        const {
+            removed,
+            ordered,
+            added,
+            list,
+        } = diff(this.items.map(item => item.el), elements) as ChildrenDiffResult<HTMLElement>;
 
         removed.forEach(index => {
             this.remove(index);
@@ -121,15 +127,21 @@ export default class Infinite extends Component {
         const scrollTop = overflow ? this.container.scrollTop : document.documentElement.scrollTop;
         const relativeScrollTop = scrollTop - this.containerOffset;
 
-        if (relativeScrollTop > this.scrollHeight - this.containerHeight - threshold) {
-            this.trigger("append", {
-                requestIndex: this.items.length,
-            });
+        if (
+            relativeScrollTop > this.scrollHeight - this.containerHeight - threshold
+        ) {
+            clearTimeout(this.timer);
+            this.timer = window.setTimeout(() => {
+                this.trigger("append", {
+                    requestIndex: this.items.length,
+                });
+            }, 60);
         }
     }
     private onResize = () => {
-        this.containerOffset = this.options.overflow ? 0 : this.container.getBoundingClientRect().top;
-        this.containerHeight = this.container.offsetHeight;
+        const overflow = this.options.overflow;
+        this.containerOffset = overflow ? 0 : this.container.getBoundingClientRect().top;
+        this.containerHeight = overflow ? this.container.offsetHeight : window.innerHeight;
         this.items.forEach(item => {
             item.size = 0;
         });

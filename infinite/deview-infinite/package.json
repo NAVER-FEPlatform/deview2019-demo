@@ -1,6 +1,6 @@
 {
 	"name": "@egjs/deview-infinite",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"description": "",
 	"main": "./dist/infinite.cjs.js",
 	"module": "./dist/infinite.esm.js",
@@ -26,12 +26,12 @@
 	},
 	"homepage": "https://github.com/NAVER-FEPlatform/deview2019-demo",
 	"dependencies": {
+		"@egjs/children-differ": "^1.0.0",
 		"@egjs/component": "^2.1.2"
 	},
 	"devDependencies": {
 		"@babel/generator": "^7.2.2",
 		"@egjs/build-helper": "0.0.5",
-		"@egjs/list-differ": "^1.0.0",
 		"tslint": "^5.12.1",
 		"typescript": "^2.8.4"
 	}
