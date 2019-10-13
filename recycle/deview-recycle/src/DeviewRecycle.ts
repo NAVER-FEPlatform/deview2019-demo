@@ -248,13 +248,16 @@ export default class DeviewRecycle extends Component {
             item.mounted = true;
         }
 
-        if (!renderExternal && (prevStartCursor !== startCursor || prevEndCursor !== endCursor)) {
-            this.layout();
+        if (prevStartCursor !== startCursor || prevEndCursor !== endCursor) {
+            if (!renderExternal) {
+                this.layout();
+            }
+
+            this.trigger("visibleChange", {
+                startCursor,
+                endCursor,
+            });
         }
-        this.trigger("visibleChange", {
-            startCursor,
-            endCursor,
-        });
     }
     private recycle(ranges: Array<{ start: number, end: number }>) {
         const items = this.items;
