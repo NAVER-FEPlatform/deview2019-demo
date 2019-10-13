@@ -1,11 +1,11 @@
 {
   "name": "@egjs/ngx-deview-infinite",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "peerDependencies": {
     "@angular/common": "^8.2.9",
     "@angular/core": "^8.2.9"
   },
   "dependencies": {
-    "@egjs/deview-infinite": "0.0.5"
+    "@egjs/deview-infinite": "^0.1.0"
   }
 }

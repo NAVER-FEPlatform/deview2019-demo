@@ -197,7 +197,9 @@ export default class DeviewRecycle extends Component {
     }
     private onResize = () => {
         const overflow = this.options.overflow;
-        this.containerOffset = overflow ? 0 : this.container.getBoundingClientRect().top;
+        this.containerOffset = overflow
+            ? 0
+            : this.container.getBoundingClientRect().top - document.body.getBoundingClientRect().top;
         this.containerHeight = overflow ? this.container.offsetHeight : window.innerHeight;
         this.items.forEach(item => {
             item.updated = false;

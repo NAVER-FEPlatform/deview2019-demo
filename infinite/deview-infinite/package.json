@@ -1,6 +1,6 @@
 {
 	"name": "@egjs/deview-infinite",
-	"version": "0.0.5",
+	"version": "0.1.0",
 	"description": "",
 	"main": "./dist/infinite.cjs.js",
 	"module": "./dist/infinite.esm.js",
