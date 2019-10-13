@@ -1,0 +1,40 @@
+{
+    "name": "@egjs/vue-deview-infinite",
+    "version": "0.0.1",
+    "main": "dist/infinite.cjs.js",
+    "module": "dist/infinite.esm.js",
+    "types": "declaration/index.d.ts",
+    "sideEffects": false,
+    "scripts": {
+        "serve": "vue-cli-service serve demo",
+        "build": "rm -rf dist && rollup -c && npm run declaration",
+        "declaration": "rm -rf declaration && tsc -p tsconfig.declaration.json",
+        "lint": "vue-cli-service lint --no-fix"
+    },
+    "author": {
+        "name": "NAVER Corp."
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NAVER-FEPlatform/deview2019-demo.git"
+    },
+    "bugs": {
+        "url": "https://github.com/NAVER-FEPlatform/deview2019-demo/issues"
+    },
+    "homepage": "https://github.com/NAVER-FEPlatform/deview2019-demo",
+    "dependencies": {
+        "@egjs/deview-infinite": "0.0.5",
+        "vue": "^2.6.10",
+        "vue-class-component": "^7.0.2",
+        "vue-property-decorator": "^8.1.0"
+    },
+    "devDependencies": {
+        "@babel/generator": "^7.2.2",
+        "@egjs/build-helper": "0.0.5",
+        "@vue/cli-plugin-typescript": "^3.12.0",
+        "@vue/cli-service": "^3.12.0",
+        "typescript": "^3.4.3",
+        "vue-template-compiler": "^2.6.10"
+    }
+}
