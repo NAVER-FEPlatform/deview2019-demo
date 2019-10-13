@@ -1,0 +1,38 @@
+{
+	"name": "@egjs/deview-recycle",
+	"version": "0.0.1",
+	"description": "",
+	"main": "./dist/recycle.cjs.js",
+	"module": "./dist/recycle.esm.js",
+	"sideEffects": false,
+	"types": "declaration/index.d.ts",
+	"scripts": {
+		"start": "rollup -c -w",
+		"build": "rollup -c && tsc -p tsconfig.declaration.json"
+	},
+	"author": {
+		"name": "NAVER Corp."
+	},
+	"namespace": {
+		"eg": "eg"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NAVER-FEPlatform/deview2019-demo.git"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/NAVER-FEPlatform/deview2019-demo/issues"
+	},
+	"homepage": "https://github.com/NAVER-FEPlatform/deview2019-demo",
+	"dependencies": {
+		"@egjs/component": "^2.1.2",
+		"@egjs/list-differ": "^1.0.0"
+	},
+	"devDependencies": {
+		"@babel/generator": "^7.2.2",
+		"@egjs/build-helper": "0.0.5",
+		"tslint": "^5.12.1",
+		"typescript": "^2.8.4"
+	}
+}
