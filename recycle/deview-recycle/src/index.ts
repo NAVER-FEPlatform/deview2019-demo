@@ -1,6 +1,6 @@
-import Infinite from "./DeviewRecycle";
+import DeviewRecycle from "./DeviewRecycle";
 
-export default Infinite;
+export default DeviewRecycle;
 
 export * from "./consts";
 export * from "./types";

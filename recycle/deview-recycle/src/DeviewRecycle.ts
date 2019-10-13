@@ -56,6 +56,7 @@ export default class DeviewRecycle extends Component {
         items.splice(index, 0, item);
 
         if (!renderExternal) {
+            this.refreshCursor();
             this.layout();
         }
         return item;
@@ -68,6 +69,7 @@ export default class DeviewRecycle extends Component {
             if (item.mounted) {
                 this.container.removeChild(item.el!);
             }
+            this.refreshCursor();
             this.layout();
         }
         return item;
@@ -110,14 +112,15 @@ export default class DeviewRecycle extends Component {
         result.ordered.forEach(([fromIndex, toIndex]) => {
             const item = items.splice(fromIndex, 1)[0];
 
-            items.splice(toIndex, 1, item);
+            items.splice(toIndex, 0, item);
         });
         result.added.forEach(index => {
             this.insert(index, "", data[index]);
         });
+        this.refreshCursor();
     }
     public sync(elements: HTMLElement[]) {
-        this.items.splice(this.startCursor, this.endCursor + 1).forEach((item, i) => {
+        this.items.slice(this.startCursor, this.endCursor + 1).forEach((item, i) => {
             item.el = elements[i];
             item.mounted = true;
         });
@@ -201,10 +204,25 @@ export default class DeviewRecycle extends Component {
         });
         this.layout();
     }
+    private refreshCursor() {
+        let startCursor = -1;
+        let endCursor = -1;
+
+        this.items.forEach((item, i) => {
+            if (!item.mounted) {
+                return;
+            }
+            (startCursor < 0) && (startCursor = i);
+            endCursor = i;
+        });
+        this.startCursor = startCursor;
+        this.endCursor = endCursor;
+    }
     private setCursor(startCursor: number, endCursor: number) {
         const container = this.container;
         const items = this.items;
         const renderExternal = this.options.renderExternal;
+
         this.recycle([
             { start: 0, end: startCursor - 1 },
             { start: endCursor + 1, end: items.length },
@@ -231,17 +249,20 @@ export default class DeviewRecycle extends Component {
         if (!renderExternal && (prevStartCursor !== startCursor || prevEndCursor !== endCursor)) {
             this.layout();
         }
-        this.trigger("visibleChange");
+        this.trigger("visibleChange", {
+            startCursor,
+            endCursor,
+        });
     }
     private recycle(ranges: Array<{ start: number, end: number }>) {
         const items = this.items;
         const renderExternal = this.options.renderExternal;
 
         ranges.forEach(({ start, end }) => {
-            for (let i = start; i < end; ++i) {
+            for (let i = start; i <= end; ++i) {
                 const item = items[i];
 
-                if (!item.mounted) {
+                if (!item || !item.mounted) {
                     continue;
                 }
                 item.mounted = false;
