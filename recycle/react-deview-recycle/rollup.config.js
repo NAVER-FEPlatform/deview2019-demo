@@ -9,11 +9,11 @@ export default buildHelper([
   {
     ...defaultOptions,
     format: "es",
-    output: "./dist/infinite.esm.js",
+    output: "./dist/recycle.esm.js",
   },
   {
     ...defaultOptions,
     format: "cjs",
-    output: "./dist/infinite.cjs.js",
+    output: "./dist/recycle.cjs.js",
   },
 ]);

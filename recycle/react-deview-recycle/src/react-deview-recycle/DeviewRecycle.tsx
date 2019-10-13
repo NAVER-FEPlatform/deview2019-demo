@@ -1,10 +1,10 @@
 import * as React from "react";
 import VanillaRecycle from "@egjs/deview-recycle";
-import { InfiniteProps } from "./types";
+import { RecycleProps } from "./types";
 import * as ReactDOM from "react-dom";
 
-export default class DeviewRecycle extends React.PureComponent<InfiniteProps> {
-    public static defaultProps: Required<InfiniteProps> = {
+export default class DeviewRecycle extends React.PureComponent<RecycleProps> {
+    public static defaultProps: Required<RecycleProps> = {
         tag: "div",
         options: {},
         onAppend: () => { },
