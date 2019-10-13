@@ -1,0 +1,13 @@
+<style>
+  .item {
+    padding: 10px;
+    border: 1px solid black;
+    width: 100%;
+  }
+</style>
+<div NgxDeviewRecycle class="container" #recycle
+  (append)="onAppend($event)" [options]="{ margin: 5 }" [getKey]="getKey" [items]="items">
+  <div class="item" *ngFor="let item of recycle.visibleItems; trackBy: trackBy;">
+    Item {{item}}
+  </div>
+</div>
