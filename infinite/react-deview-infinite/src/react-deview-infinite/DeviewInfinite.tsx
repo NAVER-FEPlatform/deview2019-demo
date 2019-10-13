@@ -3,7 +3,7 @@ import VanillaInfinite from "@egjs/deview-infinite";
 import { InfiniteProps } from "./types";
 import * as ReactDOM from "react-dom";
 
-export default class Infinite extends React.PureComponent<InfiniteProps> {
+export default class DeviewInfinite extends React.PureComponent<InfiniteProps> {
     public static defaultProps: Required<InfiniteProps> = {
         tag: "div",
         options: {},

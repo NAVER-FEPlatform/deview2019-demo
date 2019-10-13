@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Infinite from './react-deview-infinite/Infinite';
+import DeviewInfinite from './react-deview-infinite/DeviewInfinite';
 
 export default class App extends React.Component {
     public state = {
@@ -19,13 +19,13 @@ export default class App extends React.Component {
         });
     }
     public render() {
-        return <Infinite
+        return <DeviewInfinite
             className="container"
             onAppend={this.onAppend}
             options={{
                 margin: 5,
             }}
-            >{this.renderItems()}</Infinite>;
+            >{this.renderItems()}</DeviewInfinite>;
     }
     public onAppend = () => {
         console.log("?");

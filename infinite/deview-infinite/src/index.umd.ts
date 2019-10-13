@@ -1,6 +1,6 @@
-import Infinite from "./Infinite";
+import DeviewInfinite from "./DeviewInfinite";
 import { DEFAULT_OPTIONS } from "./consts";
 
-(Infinite as any).DEFAULT_OPTIONS = DEFAULT_OPTIONS;
+(DeviewInfinite as any).DEFAULT_OPTIONS = DEFAULT_OPTIONS;
 
-export default Infinite;
+export default DeviewInfinite;

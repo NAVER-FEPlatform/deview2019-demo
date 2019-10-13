@@ -9,7 +9,7 @@ function makeElement(html: string) {
     return el.children[0] as HTMLElement;
 }
 
-export default class Infinite extends Component {
+export default class DeviewInfinite extends Component {
     public options!: InfiniteOptions;
     private items: Item[] = [];
     private containerOffset = 0;

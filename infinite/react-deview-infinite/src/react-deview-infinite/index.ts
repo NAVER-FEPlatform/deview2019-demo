@@ -1,4 +1,4 @@
-import Infinite from "./Infinite";
+import DeviewInfinite from "./DeviewInfinite";
 
-export default Infinite;
+export default DeviewInfinite;
 export * from "./types";
