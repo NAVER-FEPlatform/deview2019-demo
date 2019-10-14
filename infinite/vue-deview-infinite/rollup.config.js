@@ -9,13 +9,13 @@ export default buildHelper([
     ...defaultOptions,
     format: "es",
     input: "./src/index.ts",
-    output: "./dist/infnite.esm.js",
+    output: "./dist/infinite.esm.js",
     exports: "named",
   },
   {
     ...defaultOptions,
     format: "cjs",
     input: "./src/index.umd.ts",
-    output: "./dist/infnite.cjs.js",
+    output: "./dist/infinite.cjs.js",
   },
 ]);
