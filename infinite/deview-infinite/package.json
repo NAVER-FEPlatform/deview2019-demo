@@ -1,6 +1,6 @@
 {
 	"name": "@egjs/deview-infinite",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "",
 	"main": "./dist/infinite.cjs.js",
 	"module": "./dist/infinite.esm.js",
@@ -30,7 +30,6 @@
 		"@egjs/component": "^2.1.2"
 	},
 	"devDependencies": {
-		"@babel/generator": "^7.2.2",
 		"@egjs/build-helper": "0.0.5",
 		"tslint": "^5.12.1",
 		"typescript": "^2.8.4"
