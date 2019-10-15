@@ -1,13 +1,28 @@
-<style>
-  .item {
-    padding: 10px;
-    border: 1px solid black;
-    width: 100%;
-  }
-</style>
-<div NgxDeviewRecycle class="container" #recycle
-  (append)="onAppend($event)" [options]="{ margin: 5 }" [getKey]="getKey" [items]="items">
-  <div class="item" *ngFor="let item of recycle.visibleItems; trackBy: trackBy;">
+<header>
+  <p>
+    DEVIEW 2019
+    <br />
+    Cross Framework Component
+  </p>
+</header>
+<div class="list">
+  items: {{items.join(", ")}}<br/>
+  viisble: <span>{{"{"}} start: {{start}}, end: {{end}} {{"}"}}</span>
+</div>
+<button class="shuffle" (click)="shuffle()">
+  Shuffle
+</button>
+<div
+  NgxDeviewRecycle
+  #recycle
+  [items]="items"
+  [options]="{ margin: 5 }"
+  (append)="onAppend()"
+
+  (visibleChange)="start=$event.start;end=$event.end;"
+  class="container"
+>
+  <div class="item" *ngFor="let item of recycle.visibleItems;trackBy: trackBy;">
     Item {{item}}
   </div>
 </div>

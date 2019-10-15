@@ -1,11 +1,11 @@
 {
   "name": "@egjs/ngx-deview-recycle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "peerDependencies": {
     "@angular/common": "^8.2.9",
     "@angular/core": "^8.2.9"
   },
   "dependencies": {
-    "@egjs/deview-recycle": "^0.1.1"
+    "@egjs/deview-recycle": "^0.1.5"
   }
 }

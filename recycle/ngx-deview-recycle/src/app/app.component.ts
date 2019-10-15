@@ -6,19 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ngx-deview-recycle-app';
-  items = [0, 1, 2];
+  name = 'Angular';
+  items = [];
+  num = 0;
+  start = 0;
+  end = 0;
   onAppend() {
     const items = this.items;
 
-    const nextItem = (items[items.length - 1] || 0) + 1;
+    this.items = [...items, ++this.num];
+  }
+  shuffle() {
+    const items = this.items;
 
-    this.items = [...items, nextItem];
+    items.sort(() => Math.random() - 0.5);
+
+    this.items = [...items];
   }
-  getKey(item: number) {
-    return item;
-  }
-  trackBy(index: number, item: number): any {
+  trackBy(index: number, item: any) {
     return item;
   }
 }

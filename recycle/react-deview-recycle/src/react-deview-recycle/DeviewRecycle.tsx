@@ -8,10 +8,7 @@ export default class DeviewRecycle extends React.PureComponent<RecycleProps> {
         tag: "div",
         options: {},
         onAppend: () => { },
-    };
-    public state = {
-        startCursor: -1,
-        endCursor: -1,
+        onVisibleChange: () => { },
     };
     private recycle!: VanillaRecycle;
     private container!: HTMLElement;
@@ -50,10 +47,8 @@ export default class DeviewRecycle extends React.PureComponent<RecycleProps> {
         ).on("append", e => {
             this.props.onAppend!({ ...e });
         }).on("visibleChange", e => {
-            this.setState({
-                startCursor: e.startCursor,
-                endCursor: e.endCursor,
-            })
+            this.props.onVisibleChange!({ ...e });
+            this.forceUpdate();
         });
 
         this.recycle.sync([].slice.call(this.container.children));

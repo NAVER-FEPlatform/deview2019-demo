@@ -159,7 +159,7 @@ export default class DeviewRecycle extends Component {
                 const startPos = item.pos;
                 const endPos = startPos + item.size;
 
-                if (startPos - threshold <= endScrollTop && scrollTop <= endPos + threshold) {
+                if (startPos - threshold <= endScrollTop && relativeScrollTop <= endPos + threshold) {
                     startCursor < 0 && (startCursor = i);
                     endCursor = i;
                     return true;
@@ -254,8 +254,8 @@ export default class DeviewRecycle extends Component {
             }
 
             this.trigger("visibleChange", {
-                startCursor,
-                endCursor,
+                start: startCursor,
+                end: endCursor,
             });
         }
     }

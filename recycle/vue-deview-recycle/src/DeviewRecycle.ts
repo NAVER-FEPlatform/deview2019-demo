@@ -37,7 +37,8 @@ export default class DeviewRecycle extends Vue {
             renderExternal: true,
         }).on('append', (e: any) => {
             this.$emit('append', { ...e, currentTarget: this });
-        }).on('visibleChange', () => {
+        }).on('visibleChange', (e: any) => {
+            this.$emit('visibleChange', { ...e, currentTarget: this });
             this.$forceUpdate();
         });
 

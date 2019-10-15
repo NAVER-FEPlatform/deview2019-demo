@@ -30,6 +30,7 @@ export class NgxDeviewRecycleComponent
   @Input() public items: any[] = [];
   @Input() public options: Partial<RecycleOptions> = {};
   @Output() public append: EventEmitter<any> = new EventEmitter();
+  @Output() public visibleChange: EventEmitter<any> = new EventEmitter();
   @ViewChild('container', { static: false }) containerRef: ElementRef;
   private recycle!: VanillaRecycle;
   private isChange = false;
@@ -68,8 +69,9 @@ export class NgxDeviewRecycleComponent
       renderExternal: true,
     }).on('append', e => {
       this.append.emit({ ...e, currentTarget: this });
-    }).on('visibleChange', () => {
+    }).on('visibleChange', e => {
       setTimeout(() => {
+        this.visibleChange.emit({ ...e, currentTarget: this });
         this.updateVisibleItems();
       });
     });

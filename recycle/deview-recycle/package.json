@@ -1,6 +1,6 @@
 {
 	"name": "@egjs/deview-recycle",
-	"version": "0.1.3",
+	"version": "0.1.5",
 	"description": "",
 	"main": "./dist/recycle.cjs.js",
 	"module": "./dist/recycle.esm.js",
