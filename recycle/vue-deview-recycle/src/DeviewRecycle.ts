@@ -49,4 +49,7 @@ export default class DeviewRecycle extends Vue {
     public updated() {
         this.recycle.sync([].slice.call(this.$el.children));
     }
+    public beforeDestroy() {
+        this.recycle.destroy();
+    }
 }

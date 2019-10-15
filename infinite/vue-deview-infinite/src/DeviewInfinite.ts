@@ -35,4 +35,7 @@ export default class DeviewInfinite extends Vue {
     public updated() {
         this.infinite.sync([].slice.call(this.$el.children));
     }
+    public beforeDestroy() {
+        this.infinite.destroy();
+    }
 }

@@ -1,6 +1,6 @@
 {
     "name": "@egjs/vue-deview-infinite",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "main": "dist/infinite.cjs.js",
     "module": "dist/infinite.esm.js",
     "types": "declaration/index.d.ts",

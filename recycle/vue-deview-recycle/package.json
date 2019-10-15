@@ -1,6 +1,6 @@
 {
     "name": "@egjs/vue-deview-recycle",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "main": "dist/recycle.cjs.js",
     "module": "dist/recycle.esm.js",
     "types": "declaration/index.d.ts",
