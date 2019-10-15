@@ -89,21 +89,21 @@ export default class DeviewInfinite extends Component {
         return this;
     }
     public sync(elements: HTMLElement[]) {
+        const items = this.items;
         const {
             removed,
             ordered,
             added,
             list,
-        } = diff(this.items.map(item => item.el), elements) as ChildrenDiffResult<HTMLElement>;
+        } = diff(items.map(item => item.el), elements) as ChildrenDiffResult<HTMLElement>;
 
         removed.forEach(index => {
             this.remove(index);
         });
         ordered.forEach(([fromIndex, toIndex]) => {
-            const item = this.remove(fromIndex);
-            const orderedItem = this.insert(toIndex, item.el);
+            const item = items.splice(fromIndex, 1)[0];
 
-            orderedItem.size = item.size;
+            items.splice(toIndex, 0, item);
         });
         added.forEach(index => {
             this.insert(index, list[index]);
