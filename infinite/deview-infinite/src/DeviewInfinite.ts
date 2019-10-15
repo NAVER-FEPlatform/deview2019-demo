@@ -124,7 +124,9 @@ export default class DeviewInfinite extends Component {
             threshold,
             overflow,
         } =  this.options;
-        const scrollTop = overflow ? this.container.scrollTop : document.documentElement.scrollTop;
+        const scrollTop = overflow
+            ? this.container.scrollTop
+            : window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
         const relativeScrollTop = scrollTop - this.containerOffset;
 
         if (

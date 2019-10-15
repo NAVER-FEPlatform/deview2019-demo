@@ -1,6 +1,6 @@
 {
     "name": "@egjs/react-deview-infinite",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "types": "declaration/index.d.ts",
     "main": "dist/infinite.cjs.js",
     "module": "dist/infinite.esm.js",
@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/NAVER-FEPlatform/deview2019-demo",
     "dependencies": {
-        "@egjs/deview-infinite": "^0.1.1"
+        "@egjs/deview-infinite": "^0.1.2"
     },
     "scripts": {
         "start": "react-scripts start",

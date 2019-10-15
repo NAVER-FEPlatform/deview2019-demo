@@ -1,6 +1,6 @@
 {
     "name": "@egjs/react-deview-recycle",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "types": "declaration/index.d.ts",
     "main": "dist/recycle.cjs.js",
     "module": "dist/recycle.esm.js",
