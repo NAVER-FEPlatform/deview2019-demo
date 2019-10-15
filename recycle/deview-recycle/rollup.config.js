@@ -6,7 +6,7 @@ export default buildHelper([
 		name,
 		input: "./src/index.umd.ts",
 		output: "./dist/recycle.cjs.js",
-		exports: "named",
+		exports: "default",
 		format: "cjs",
 	},
 	{
