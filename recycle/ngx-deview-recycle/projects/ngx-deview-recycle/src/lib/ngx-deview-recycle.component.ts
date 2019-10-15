@@ -26,7 +26,7 @@ export class NgxDeviewRecycleComponent
   OnDestroy, OnChanges {
 
   public visibleItems: any[] = [];
-  @Input() public getKey: (e: any) => any = (item => item);
+  @Input() public trackBy: (index: number, item: any) => any = ((_, item) => item);
   @Input() public items: any[] = [];
   @Input() public options: Partial<RecycleOptions> = {};
   @Output() public append: EventEmitter<any> = new EventEmitter();
@@ -44,9 +44,9 @@ export class NgxDeviewRecycleComponent
     this.updateVisibleItems();
   }
   updateVisibleItems() {
-    const trackBy = this.getKey;
+    const trackBy = this.trackBy;
     const items = this.items;
-    const itemKeys = items.map(item => trackBy(item));
+    const itemKeys = items.map((item, i) => trackBy(i, item));
 
     this.recycle.beforeSync(itemKeys);
     const indexes = this.recycle.getRenderingIndexes();
