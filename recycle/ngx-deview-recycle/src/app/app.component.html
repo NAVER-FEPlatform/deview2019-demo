@@ -17,6 +17,7 @@
   #recycle
   [items]="items"
   [options]="{ margin: 5 }"
+  [trackBy]="trackBy"
   (append)="onAppend()"
 
   (visibleChange)="start=$event.start;end=$event.end;"
