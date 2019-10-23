@@ -106,14 +106,13 @@ export default class DeviewRecycle extends Component {
         const itemKeys = this.items.map(item => item.key);
         const result = diff(itemKeys, data, key => key);
 
-        result.removed.forEach(index => {
-            this.remove(index);
-        });
-        result.ordered.forEach(([fromIndex, toIndex]) => {
-            const item = items.splice(fromIndex, 1)[0];
+        const nextList: Item[] = [];
 
-            items.splice(toIndex, 0, item);
+        result.maintained.forEach(([fromIndex]) => {
+            nextList.push(items[fromIndex]);
         });
+        this.items = nextList;
+
         result.added.forEach(index => {
             this.insert(index, "", data[index]);
         });
