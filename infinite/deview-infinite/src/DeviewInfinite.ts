@@ -90,11 +90,7 @@ export default class DeviewInfinite extends Component {
     }
     public sync(elements: HTMLElement[]) {
         const items = this.items;
-        const {
-            maintained,
-            added,
-            list,
-        } = diff(items.map(item => item.el), elements) as ChildrenDiffResult<HTMLElement>;
+        const { maintained, added } = diff(items.map(item => item.el), elements) as ChildrenDiffResult<HTMLElement>;
 
         const nextList: Item[] = [];
 
@@ -104,7 +100,7 @@ export default class DeviewInfinite extends Component {
         this.items = nextList;
 
         added.forEach(index => {
-            this.insert(index, list[index]);
+            this.insert(index, elements[index]);
         });
         this.layout();
         return this;
