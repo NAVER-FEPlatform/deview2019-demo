@@ -1,0 +1,47 @@
+{
+    "name": "@egjs/svelte-deview-recycle",
+    "version": "0.0.4",
+    "main": "dist/recycle.cjs.js",
+    "module": "dist/recycle.esm.js",
+    "sideEffects": false,
+    "author": {
+        "name": "NAVER Corp."
+    },
+    "namespace": {
+        "eg": "eg"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NAVER-FEPlatform/deview2019-demo.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/NAVER-FEPlatform/deview2019-demo/issues"
+    },
+    "homepage": "https://github.com/NAVER-FEPlatform/deview2019-demo",
+    "devDependencies": {
+        "@babel/core": "^7.6.4",
+        "@babel/preset-env": "^7.6.3",
+        "@egjs/build-helper": "0.0.5",
+        "rollup": "^1.12.0",
+        "rollup-plugin-babel": "^4.3.3",
+        "rollup-plugin-commonjs": "^10.0.0",
+        "rollup-plugin-livereload": "^1.0.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-svelte": "^5.0.3",
+        "rollup-plugin-terser": "^5.1.2",
+        "sirv-cli": "^0.4.4",
+        "svelte": "^3.7.1",
+        "tslib": "^1.10.0",
+        "typescript": "^3.6.4"
+    },
+    "dependencies": {
+        "@egjs/deview-recycle": "^0.1.7"
+    },
+    "scripts": {
+        "build": "rollup -c rollup.build.config.js",
+        "dev": "rollup -c -w",
+        "start": "sirv public --single",
+        "start:dev": "sirv public --single --dev"
+    }
+}
