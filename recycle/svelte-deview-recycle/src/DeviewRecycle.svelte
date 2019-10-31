@@ -1,33 +1,42 @@
 <script>
   import VanillaRecycle from "@egjs/deview-recycle";
-  import {
-    createEventDispatcher,
-    onMount,
-    onDestroy,
-    tick,
-  } from "svelte";
+  import { createEventDispatcher, onMount, onDestroy, tick } from "svelte";
 
-  export let items = [];
   export let start = -1;
   export let end = -1;
-  export let container;
+  export let items = [];
+
   const dispatch = createEventDispatcher();
   let visibleItems = items;
   let recycle;
+  let container;
 
-  const {
-    class: className = "",
-    itemBy,
-    options = {},
-    ...attributes
-  } = $$props;
+  let itemBy;
+  let options;
+  let attributes;
 
-  delete attributes.items;
-  delete attributes.$$slots;
-  delete attributes.$$scope;
+  $: {
+    const props = getProps($$props);
 
+    itemBy = props.itemBy;
+    options = props.options;
+    attributes = props.attributes;
+  }
   $: syncItems(items);
 
+  function getProps($$props) {
+    const { itemBy = item => item, options = {}, ...attributes } = $$props;
+
+    delete attributes.items;
+    delete attributes.$$slots;
+    delete attributes.$$scope;
+
+    return {
+      itemBy,
+      options,
+      attributes
+    };
+  }
   function syncItems(items) {
     if (recycle) {
       recycle.beforeSync(items.map(itemBy));
@@ -72,8 +81,8 @@
   });
 </script>
 
-<div class={className} {...attributes} bind:this={container}>
-  {#each visibleItems as item, index (itemBy(item, start + index, items)) }
-  <slot items={visibleItems} item={item} index={start + index} />
+<div {...attributes} bind:this={container}>
+  {#each visibleItems as item, index (itemBy(item, start + index, items))}
+    <slot items={visibleItems} {item} index={start + index} />
   {/each}
 </div>
