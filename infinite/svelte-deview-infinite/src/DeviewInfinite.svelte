@@ -9,11 +9,12 @@
   const {
     options = {},
     class: className,
-    $$slots: slots,
-    $$scope: scope,
     ...attributes
   } = $$props;
 
+  delete attributes.$$slots;
+  delete attributes.$$scope;
+  
   function sync() {
     infinite.sync([].slice.call(container.children));
   }

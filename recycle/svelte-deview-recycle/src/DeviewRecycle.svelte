@@ -19,12 +19,12 @@
     class: className = "",
     itemBy,
     options = {},
-    $$slots: slots,
-    $$scope: scope,
     ...attributes
   } = $$props;
 
   delete attributes.items;
+  delete attributes.$$slots;
+  delete attributes.$$scope;
 
   $: syncItems(items);
 
