@@ -5,16 +5,31 @@
   const dispatch = createEventDispatcher();
   let container;
   let infinite;
+  let options;
+  let attributes;
 
-  const {
-    options = {},
-    class: className,
-    ...attributes
-  } = $$props;
+  $: {
+    const props = getProps($$props);
 
-  delete attributes.$$slots;
-  delete attributes.$$scope;
-  
+    options = props.options;
+    attributes = props.attributes;
+  }
+
+
+  function getProps($$props) {
+    const {
+      options = {},
+      ...attributes
+    } = $$props;
+
+    delete attributes.$$slots;
+    delete attributes.$$scope;
+
+    return {
+      options,
+      attributes
+    };
+  }
   function sync() {
     infinite.sync([].slice.call(container.children));
   }
@@ -33,6 +48,6 @@
   });
 </script>
 
-<div class={className} {...attributes} bind:this={container}>
+<div {...attributes} bind:this={container}>
   <slot />
 </div>

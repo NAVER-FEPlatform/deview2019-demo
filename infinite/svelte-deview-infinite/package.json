@@ -1,6 +1,6 @@
 {
     "name": "@egjs/svelte-deview-infinite",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "dist/infinite.cjs.js",
     "module": "dist/infinite.esm.js",
     "sideEffects": false,
