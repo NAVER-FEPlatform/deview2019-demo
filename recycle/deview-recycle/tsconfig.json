@@ -3,7 +3,7 @@
 		"outDir": "./outjs/",
 		"sourceMap": true,
 		"module": "es2015",
-		"target": "es5",
+		"target": "es6",
 		"strictNullChecks": true,
 		"moduleResolution": "node",
 		"noUnusedLocals": true,
