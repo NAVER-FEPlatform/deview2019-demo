@@ -1,6 +1,6 @@
 {
     "name": "@egjs/lit-deview-recycle",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "types": "declaration/index.d.ts",
     "main": "dist/recycle.cjs.js",
     "module": "dist/recycle.esm.js",
@@ -18,8 +18,7 @@
     },
     "homepage": "https://github.com/NAVER-FEPlatform/deview2019-demo",
     "dependencies": {
-        "@egjs/deview-recycle": "^0.1.7",
-        "lit-element": "^2.2.1"
+        "@egjs/deview-recycle": "^0.1.7"
     },
     "scripts": {
         "start": "rollup -c rollup.demo.config.js -w",
@@ -29,6 +28,7 @@
     "devDependencies": {
         "@egjs/build-helper": "0.0.5",
         "tslint": "^5.20.1",
-        "typescript": "3.6.4"
+        "typescript": "3.6.4",
+        "lit-element": "^2.2.1"
     }
 }

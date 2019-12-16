@@ -79,7 +79,7 @@ header p {
     box-sizing: border-box;
     font-size: 15px;
 }
-::shadow .item {
+.item {
     box-sizing: border-box;
     padding: 10px;
     border: 1px solid #ddd;

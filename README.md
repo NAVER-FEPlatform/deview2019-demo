@@ -17,3 +17,5 @@
 * Angular - [소스](https://github.com/NAVER-FEPlatform/deview2019-demo/blob/master/recycle/ngx-deview-recycle/projects/ngx-deview-recycle/src/lib/ngx-deview-recycle.component.ts) / [데모 소스](https://codesandbox.io/s/ngx-deview-recycle-demo-2c6l1) / [데모](https://2c6l1.codesandbox.io/)
 * Vue - [소스](https://github.com/NAVER-FEPlatform/deview2019-demo/blob/master/recycle/vue-deview-recycle/src/DeviewRecycle.ts) / [데모 소스](https://codesandbox.io/s/vue-deview-infinite-demo-spjq9) / [데모](https://spjq9.codesandbox.io/)
 * Svelte - [소스](https://github.com/NAVER-FEPlatform/deview2019-demo/blob/master/recycle/svelte-deview-recycle/src/DeviewRecycle.svelte) / [데모 소스](https://codesandbox.io/s/svelte-deview-recycle-demo-onync) / [데모](https://onync.csb.app/)
+* Lit - [소스](https://github.com/NAVER-FEPlatform/deview2019-demo/blob/master/recycle/lit-deview-recycle/src/LitDeviewRecycle.ts) / [데모 소스](https://codesandbox.io/s/lit-deview-recycle-demo-3wcwy) / [데모](https://3wcwy.csb.app/)
+
