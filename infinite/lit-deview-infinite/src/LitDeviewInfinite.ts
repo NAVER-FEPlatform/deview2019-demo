@@ -74,12 +74,16 @@ export class LitDeviewInfinite extends LitElement {
     updated() {
         this.infinite.sync([].slice.call(this.shadowRoot.children));
     }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.infinite.destroy();
+    }
 }
 
 
 
 declare global {
     interface HTMLElementTagNameMap {
-        'lit-virtualizer': LitDeviewInfinite;
+        "lit-deview-infinite": LitDeviewInfinite;
     }
 }
