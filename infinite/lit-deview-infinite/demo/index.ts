@@ -67,6 +67,7 @@ header p {
 }
 .container {
     position: relative;
+    display: block;
 }
 .shuffle {
     width: 100%;
@@ -102,6 +103,16 @@ header p {
 <lit-deview-infinite
     class="container"
     .items=${items}
+    .css=${html`
+<style>
+.item {
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+</style>
+    `}
     .template=${renderItem}
     .options=${{
             margin: 5,

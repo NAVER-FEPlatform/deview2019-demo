@@ -9,7 +9,7 @@
 * Angular - [소스](https://github.com/NAVER-FEPlatform/deview2019-demo/blob/master/infinite/ngx-deview-infinite/projects/ngx-deview-infinite/src/lib/ngx-deview-infinite.component.ts) / [데모 소스](https://codesandbox.io/s/ngx-deview-infinite-demo-7xek7) / [데모](https://7xek7.codesandbox.io/)
 * Vue - [소스](https://github.com/NAVER-FEPlatform/deview2019-demo/blob/master/infinite/vue-deview-infinite/src/DeviewInfinite.ts) / [데모 소스](https://codesandbox.io/s/vue-deview-infinite-demo-un5uh) / [데모](https://un5uh.codesandbox.io/)
 * Svelte - [소스](https://github.com/NAVER-FEPlatform/deview2019-demo/blob/master/infinite/svelte-deview-infinite/src/DeviewInfinite.svelte) / [데모 소스](https://codesandbox.io/s/svelte-deview-infinite-demo-t6brp) / [데모](https://t6brp.csb.app/)
-
+* Lit - [소스](https://github.com/NAVER-FEPlatform/deview2019-demo/blob/master/infinite/lit-deview-infinite/src/LitDeviewInfinite.ts) / [데모 소스](https://codesandbox.io/s/lit-deview-infinite-demo-j5wt5) / [데모](https://j5wt5.csb.app/)
 
 ## Reycle 구조의 Infinite Scroll
 * Vanilla - [소스](https://github.com/NAVER-FEPlatform/deview2019-demo/blob/master/recycle/deview-recycle/src/DeviewRecycle.ts) / [데모 소스](https://codesandbox.io/s/vanilla-deview-recycle-demo-3hp2d) / [데모](https://3hp2d.codesandbox.io/)

@@ -51,10 +51,14 @@ export class LitDeviewInfinite extends LitElement {
     }) itemBy: (item: any, index: number) => any = item => item;
     @property({
         type: Function,
+    }) css: ItemTemplate<any> = () => "";
+    @property({
+        type: Function,
     }) template: ItemTemplate<any> = () => "";
 
     render() {
         return html`
+        ${this.css}
         ${repeat(this.items, this.itemBy, this.template)}
         `;
     }
